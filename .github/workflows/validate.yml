@@ -8,32 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
-          allow-unsafe-pr-checkout: true
           ref: refs/pull/${{ github.event.number }}/merge
-
       - name: Validate images
         uses: LabyMod/server-media/.github/actions/validate@master
-
   validate_manifest:
     name: Manifest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
-          allow-unsafe-pr-checkout: true
           ref: refs/pull/${{ github.event.number }}/merge
-
       - name: Get changed files
         uses: lots0logs/gh-action-get-changed-files@2.2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Add json
-        run: cp ${HOME}/files.json ./
-
+        run:
+          cp ${HOME}/files.json ./
       - name: Validate manifest
         uses: LabyMod/server-media/.github/actions/validate-manifest@master
         env:
