@@ -16,7 +16,7 @@
       "command": "/server hyperlands"
     },
     "islandempire": {
-      "name": "islandempire",
+      "name": "IslandEmpire",
       "color": "#32CD32",
       "command": "/server islandempire"
     }
