@@ -19,6 +19,7 @@
       "name": "islandempire",
       "color": "#32CD32",
       "command": "/server islandempire"
+    }
   },
   "discord": {
     "server_id": 1177720568448032888,
